@@ -1,0 +1,25 @@
+import pgzrun
+import random
+
+WIDTH = 800
+HEIGHT = 600
+
+rectangles = []
+
+# Generate 100 rectangles with random colors and positions
+for _ in range(100):
+    rect = {
+        'x': random.randint(0, WIDTH-50),
+        'y': random.randint(0, HEIGHT-50),
+        'width': random.randint(20, 50),
+        'height': random.randint(20, 50),
+        'color': (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    }
+    rectangles.append(rect)
+
+def draw():
+    screen.clear()
+    for rect in rectangles:
+        screen.draw.filled_rect(Rect(rect['x'], rect['y'], rect['width'], rect['height']), rect['color'])
+
+pgzrun.go()
